@@ -2,7 +2,7 @@
   "name": "webpack-file-changer",
   "version": "1.0.0",
   "description": "move files and replace strings in the files.",
-  "main": "index.js",
+  "main": "./lib/index",
   "scripts": {
     "test": "test"
   },
