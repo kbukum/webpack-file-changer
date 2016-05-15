@@ -1,0 +1,26 @@
+{
+  "name": "webpack-file-changer",
+  "version": "1.0.0",
+  "description": "move files and replace strings in the files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbukum/webpack-file-changer.git"
+  },
+  "keywords": [
+    "move",
+    "files"
+  ],
+  "author": "Gol D. Roger <kamilbukum@gmail.com> (www.oopdev.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kbukum/webpack-file-changer/issues"
+  },
+  "homepage": "https://github.com/kbukum/webpack-file-changer#readme",
+  "dependencies": {
+    "fs-extra": "^0.30.0"
+  }
+}
