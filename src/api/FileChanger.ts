@@ -1,5 +1,4 @@
 import WebpackUtility from "../util/WebpackUtility";
-import Files from "../util/Files";
 
 export interface WebpackPlugin {
     apply(compiler, params);

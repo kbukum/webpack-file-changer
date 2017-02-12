@@ -29,17 +29,19 @@ export default class WebpackUtility {
             for(let key in parameters) {
                 if(parameters.hasOwnProperty(key)) {
                     let value = parameters[key];
-                    let hashResult = value.match(WebpackUtility.hashPattern);
-                    if(hashResult != null) {
-                        value = value.replace(WebpackUtility.hashPattern, stats.hash);
-                    }
-                    let hasIdResult = value.match(WebpackUtility.hashAndIdPattern);
-                    if(hasIdResult != null) {
-                        value = value.replace(WebpackUtility.hashAndIdPattern, stats.compilation.chunks[hasIdResult[2]].hash);
-                    }
-                    let renderedHashIdResult = value.match(WebpackUtility.renderedHashAndIdPattern);
-                    if(renderedHashIdResult != null) {
-                        value = value.replace(WebpackUtility.renderedHashAndIdPattern, stats.compilation.chunks[renderedHashIdResult[2]].renderedHash);
+                    if(typeof value === "string") {
+                        let hashResult = value.match(WebpackUtility.hashPattern);
+                        if(hashResult != null) {
+                            value = value.replace(WebpackUtility.hashPattern, stats.hash);
+                        }
+                        let hasIdResult = value.match(WebpackUtility.hashAndIdPattern);
+                        if(hasIdResult != null) {
+                            value = value.replace(WebpackUtility.hashAndIdPattern, stats.compilation.chunks[hasIdResult[2]].hash);
+                        }
+                        let renderedHashIdResult = value.match(WebpackUtility.renderedHashAndIdPattern);
+                        if(renderedHashIdResult != null) {
+                            value = value.replace(WebpackUtility.renderedHashAndIdPattern, stats.compilation.chunks[renderedHashIdResult[2]].renderedHash);
+                        }
                     }
                     parameters[key] = value;
                 }
