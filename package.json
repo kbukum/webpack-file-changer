@@ -1,26 +1,33 @@
 {
   "name": "webpack-file-changer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "move files and replace strings in the files.",
   "main": "./lib/index",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kbukum/webpack-file-changer.git"
-  },
-  "keywords": [
-    "move",
-    "files"
-  ],
-  "author": "Gol D. Roger <kamilbukum@gmail.com> (www.oopdev.org)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kbukum/webpack-file-changer/issues"
+  "scripts": {
+    "build": "rimraf ./lib && tsc -p tsconfig.json",
+    "pretest": "npm run build && tsc -p __test__/tsconfig.json",
+    "test": "jest --config config/test/jest.json",
+    "coverage": "npm run pretest && jest --config jest.json",
+    "docs": "rimraf ./docs && typedoc --module commonjs --target ES5 --name JS-Criteria --readme ./README.md  --exclude **/*.spec.ts --out ./docs ./src && node node_modules/shx/lib/cli.js touch ./docs/.nojekyll"
   },
-  "homepage": "https://github.com/kbukum/webpack-file-changer#readme",
+  "author": "kamilbukum@gmail.com",
+  "devDependencies": {
+    "@types/es6-promise": "0.0.32",
+    "@types/fs-extra": "0.0.37",
+    "@types/jest": "^18.1.1",
+    "@types/node": "^7.0.5",
+    "@types/webpack": "^2.2.5",
+    "jasmine-reporters": "^2.2.0",
+    "jest": "^18.1.0",
+    "rimraf": "^2.5.4",
+    "shx": "^0.2.2",
+    "typedoc": "^0.5.5",
+    "typescript": "^2.1.6",
+    "webpack": "^2.2.0"
+  },
   "dependencies": {
-    "fs-extra": "^0.30.0"
+    "es6-promise": "^4.0.5",
+    "fs-extra": "^2.0.0"
   }
 }

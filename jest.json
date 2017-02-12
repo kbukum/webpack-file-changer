@@ -1,0 +1,27 @@
+{
+  "bail": true,
+  "rootDir": "./",
+  "browser": true,
+  "testRegex": ".*\\.spec\\.ts$",
+  "transform": {
+    "^.+\\.ts$": "<rootDir>config/test/jest-typescript-transform.js"
+  },
+  "moduleNameMapper": {
+    "^webpack-file-changer\\/lib\\/(.*)": "<rootDir>/src/$1",
+    "^webpack-file-changer$": "<rootDir>/src/index"
+  },
+  "setupTestFrameworkScriptFile": "<rootDir>config/test/setupFile.ts",
+  "testEnvironment": "node",
+  "collectCoverage": true,
+  "coverageDirectory": "coverage",
+  "collectCoverageFrom": [
+    "src/**/*.ts"
+  ],
+  "coveragePathIgnorePatterns": [
+    ".*__test__/.*"
+  ],
+  "modulePathIgnorePatterns": [
+    "<rootDir>/config/.*"
+  ],
+  "moduleFileExtensions": ["js", "json", "ts"]
+}

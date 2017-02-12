@@ -1,0 +1,20 @@
+{
+  "bail": true,
+  "rootDir": "../../",
+  "browser": true,
+  "testRegex": ".*\\.spec\\.ts$",
+  "transform": {
+    "^.+\\.ts$": "<rootDir>config/test/jest-typescript-transform.js"
+  },
+  "moduleNameMapper": {
+    "^webpack-file-changer\\/lib\\/(.*)": "<rootDir>/lib/$1",
+    "^webpack-file-changer$": "<rootDir>/lib/index"
+  },
+  "setupTestFrameworkScriptFile": "<rootDir>config/test/setupFile.ts",
+  "testEnvironment": "node",
+  "collectCoverage": false,
+  "modulePathIgnorePatterns": [
+    "<rootDir>/config/.*"
+  ],
+  "moduleFileExtensions": ["js", "json", "ts"]
+}

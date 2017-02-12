@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "webpack-file-changer/lib/*": ["./src/*"],
+      "webpack-file-changer": ["./src/index"]
+    },
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "outDir": "lib"
+  },
+  "exclude": [
+    "config",
+    "node_modules",
+    "__test__"
+  ]
+}

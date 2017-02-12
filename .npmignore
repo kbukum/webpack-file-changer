@@ -1,0 +1,9 @@
+/__test__
+/config
+/coverage
+/node_modules
+/src
+/.gitignore
+/.travis.yml
+/jest.json
+/tsconfig.json
