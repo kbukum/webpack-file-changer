@@ -1,6 +1,6 @@
 {
   "name": "webpack-file-changer",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "move files and replace strings in the files.",
   "main": "./lib/index",
   "license": "MIT",
